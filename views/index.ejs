@@ -4,12 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        <%= title %>
+        Termekek
     </title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1><%= title %></h1>
-    Hello EJS!
+    <h1>Termékek</h1>
+
+    <a href="/filter">Filter</a><br>
+    <a href="/new">Uj termék</a>
+    
+    <table>
+        <thead>
+            <th>name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>stock</th>
+        </thead>
+        <tbody>
+            <% for(termek of Product) {%>
+
+                <% if (termek.stock < 5){ %>
+                
+                    <tr>
+                        <td><%= termek.name %></td>
+                        <td><%= termek.category %></td>
+                        <td><%= termek.price %></td>
+                        <td style="color: red; font-weight: bold;"><%= termek.stock %></td>
+                    </tr>
+                
+                    <% }else if(termek.stock == 0) { %>
+                        <tr style="color: red; font-weight: bold;">
+                            <td><%= termek.name %></td>
+                            <td><%= termek.category %></td>
+                            <td><%= termek.price %></td>
+                            <td><%= termek.stock %></td>
+                        </tr>
+                    <% }else { %>
+                        <tr>
+                            <td><%= termek.name %></td>
+                            <td><%= termek.category %></td>
+                            <td><%= termek.price %></td>
+                            <td><%= termek.stock %></td>
+                        </tr>
+
+
+                <% } %>
+            <% } %>
+        </tbody>
+    </table>
+
+
 </body>
 </html>

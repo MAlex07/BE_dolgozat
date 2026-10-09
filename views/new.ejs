@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Új termék felvétele</h1>
+
+    <a href="/index">Főoldal</a><br>
+    <a href="/filter">Filter</a><br>
+
+    <table>
+        <thead>
+            <th>name</th>
+            <th>category</th>
+            <th>price</th>
+            <th>stock</th>
+        </thead>
+        <tbody>
+            <% for(termek of Product) {%>
+                
+                        <tr>
+                            <td><%= termek.name %></td>
+                            <td><%= termek.category %></td>
+                            <td><%= termek.price %></td>
+                            <td><%= termek.stock %></td>
+                        </tr>
+
+            <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
