@@ -11,25 +11,23 @@
     <a href="/index">Főoldal</a><br>
     <a href="/filter">Filter</a><br>
 
-    <table>
-        <thead>
-            <th>name</th>
-            <th>category</th>
-            <th>price</th>
-            <th>stock</th>
-        </thead>
-        <tbody>
-            <% for(termek of Product) {%>
-                
-                        <tr>
-                            <td><%= termek.name %></td>
-                            <td><%= termek.category %></td>
-                            <td><%= termek.price %></td>
-                            <td><%= termek.stock %></td>
-                        </tr>
+    <form>
+        <label for="name">Adja meg a termék nevét</label><br>
+        <input type="text" id="name"><br>
+        <label for="category">Válassza ki a kategóriát</label><br>
+        <select name="category">
+            <option value="elektronika">elektronika</option>
+            <option value="ruházat">ruházat</option>
+            <option value="könyv">könyv</option>
+            <option value="játék">játék</option>
+        </select><br>
+        <label for="price">Adja meg a termék árát</label><br>
+        <input type="number" id="price"><br>
+        <label for="stock">Adja meg mennyi van belőle raktáron</label><br>
+        <input type="number" id="stock">
 
-            <% } %>
-        </tbody>
-    </table>
+        <button type="submit">Hozzáad</button>
+
+    </form>
 </body>
 </html>

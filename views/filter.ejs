@@ -10,6 +10,7 @@
     <a href="/index">Főoldal</a>
  
     <form action="/filter" method="get">
+        <label for="category">Válassza ki a kategóriát</label><br>
         <select name="category">
             <option value="elektronika" <%= category === 'elektronika' ? 'selected' : '' %>>elektronika</option>
             <option value="ruházat" <%= category === 'ruházat' ? 'selected' : '' %>>ruházat</option>
